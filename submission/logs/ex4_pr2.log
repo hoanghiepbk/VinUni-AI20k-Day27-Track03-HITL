@@ -1,0 +1,25 @@
+─────────────────────── Exercise 4 — SQLite audit trail ───────────────────────
+PR: https://github.com/VinUni-AI20k/PR-Demo/pull/2
+thread_id = df70a20e-08b7-4443-a0c1-64139b2e3fe0
+
+→ fetch_pr
+  ✓ 4 files, head 501f95e
+→ analyze
+  ✓ confidence=25%, 4 comment(s)
+→ route
+  ✓ decision=escalate (confidence=25%)
+Q: What measures are in place to secure the token storage?
+A: Q: Is there a plan to replace MD5 with a more secure hashing algorithm?
+A: Q: How will user authentication be managed in future updates?
+A: Q: What is the strategy for preventing SQL injection in the database 
+interactions?
+A: Deserializing unregistered type common.schemas.PRAnalysis from checkpoint. This will be blocked in a future version. Set LANGGRAPH_STRICT_MSGPACK=true to block now, or add to allowed_msgpack_modules to allow explicitly: [('common.schemas', 'PRAnalysis')]
+→ synthesize
+  ✓ refined confidence=70%
+→ commit
+  ✓ posted comment to https://github.com/VinUni-AI20k/PR-Demo/pull/2
+──────────────────────────────────── Final ────────────────────────────────────
+final_action = committed
+
+Replay: uv run python -m audit.replay --thread 
+df70a20e-08b7-4443-a0c1-64139b2e3fe0
